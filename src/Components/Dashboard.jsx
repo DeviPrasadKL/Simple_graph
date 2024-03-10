@@ -39,11 +39,12 @@ const Dashboard = () => {
                     cardsData.map((card, index) => {
                         return (
                             <DashboardCard
+                                key={card+index}
                                 title={card.heading}
                                 mainValue={card.price}
                                 percentChange={card.percentage}
                                 dataKey={`sessions${index}`}
-                                onEditClick={()=>handleEditClick(`sessions${index}`)}
+                                onEditClick={() => handleEditClick(`sessions${index}`)}
                                 isDropdownOpen={activeDropdown === `sessions${index}`}
                             />
                         )
